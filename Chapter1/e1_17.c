@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * Problem Statement:
+ * Write a program to print all input lines that are longer than 80 characters.
+ */
+
 #define TARGET_LENGTH 80
 #define MAX_LENGTH 1000 
 
@@ -8,6 +13,8 @@ int get_line(char a[], int maxlength);
 main() {
     int length;
     char cur_line[MAX_LENGTH];
+
+    // Simply get lines and lengths and print out any that reach the target length.
     while ((length = get_line(cur_line, MAX_LENGTH)) > 0)
         if (length > TARGET_LENGTH)
             printf("<<TARGET LINE FOUND>>: %s", cur_line);

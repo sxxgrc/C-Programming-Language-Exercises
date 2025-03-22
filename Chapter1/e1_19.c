@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * Problem Statement:
+ * Write a function reverse(s) that reverses the character string s . Use it to write a program 
+ * that reverses its input a line at a time. 
+ */
+
 #define MAX_LENGTH 1000
 
 int get_line(char a[], int maxlength);
@@ -8,6 +14,8 @@ void reverse(char a[], int length);
 main() {
     int length;
     char cur_line[MAX_LENGTH];
+
+    // Go through each line, reverse it if enough to reverse, then print it.
     while ((length = get_line(cur_line, MAX_LENGTH)) > 0) {
         if (length > 1)
             reverse(cur_line, length);

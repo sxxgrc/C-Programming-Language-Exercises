@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/**
+ * Problem Statement:
+ * Write a program to print a histogram of the lengths of words in its input.
+ * It is easy to draw the histogram with the bars horizontal;
+ * a vertical orientation is more challenging.
+ */
+
 #define IN  1
 #define OUT 0
 #define X   'X'
@@ -14,6 +21,7 @@ main() {
     for (i = 0; i < MAX + 1; i++)
         lengths[i] = 0;
 
+    // Go through all of input and collect sizes/counts of all words.
     while ((c = getchar()) != EOF) {
         if (c == ' ' || c == '\t' || c == '\n') {
             if (state == IN) {
@@ -35,6 +43,7 @@ main() {
     }
     putchar('\n');
 
+    // Print the histogram out vertically (minus bottom labels).
     int j;
     for (i = 0; i < max_count; i++) {
         printf("%4d  |", max_count - i);
@@ -46,10 +55,12 @@ main() {
         putchar('\n');
     }
 
+    // Print bottom border.
     for (i = 0; i < (7 + (3 * MAX + 1) + 9); i++)
         putchar('-');
     putchar('\n');
 
+    // Print bottom labels for counts.
     printf("       ");
     for (i = 1; i <= MAX; i++)
         printf(" %d ", i);
