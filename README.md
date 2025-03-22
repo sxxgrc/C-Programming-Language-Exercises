@@ -1,0 +1,1 @@
+A simple collection of some of my own solutions to the exercises present in _The C Programming Language_ by **Brian W. Kernighan** and **Dennis M. Ritchie**.
